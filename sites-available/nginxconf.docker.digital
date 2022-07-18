@@ -1,0 +1,13 @@
+server {
+	listen 80;
+	listen [::]:80;
+
+	root /var/www/nginxconf;
+	index index.html index.htm index.nginx-debian.html index.php;
+
+	server_name nginxconf.docker.digital;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
